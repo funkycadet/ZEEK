@@ -1,3 +1,14 @@
 __pycache__
 env/
 node_modules/
+*.pyc
+
+instance/
+
+.pytest_cache/
+.coverage
+htmlcov/
+
+dist/
+build/
+*.egg-info/
