@@ -5,8 +5,9 @@ const initialTasks = [{
   id: "25aeaf32-3ef6-4009-869d-b784f1f072cd",
   title: "Task one",
   desc: "Details one",
-  due_date: 168,
+  status: "Pending",
   priority: "urgent",
+  category: "Miscellanous"
 }];
 
 const TaskReducer = (state = initialTasks, action) => {
@@ -19,30 +20,15 @@ const TaskReducer = (state = initialTasks, action) => {
             id: uuid(),
             title: action.payload.title,
             desc: action.payload.desc,
-            due_date: action.payload.due_date,
-            priority: action.payload.priority
+            priority: action.payload.priority,
+            status: action.payload.status,
+            category: action.payload.category
           }
         ]
       }
 
     case REMOVE_TASK:
       return state.filter((task) => task.id !== action.payload.id);
-
-    case MARK_TASK:
-      {
-        const filtered = state.filter((task) => task.id !== action.payload.id);
-        return [
-          ...filtered,
-          {
-            id: action.payload.task.id,
-            title: action.payload.task.title,
-            desc: action.payload.task.desc,
-            due_date: action.payload.task.due_date,
-            priority: action.payload.task.priority,
-            status: action.payload.status
-          }
-        ]
-      }
 
     case UPDATE_TASK:
       {
@@ -53,9 +39,9 @@ const TaskReducer = (state = initialTasks, action) => {
             id: action.payload.id,
             title: action.payload.title,
             desc: action.payload.desc,
-            due_date: action.payload.due_date,
             priority: action.payload.priority,
-            status: action.payload.status
+            status: action.payload.status,
+            category: action.payload.category
           }
         ]
       }

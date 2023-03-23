@@ -4,7 +4,13 @@ import {
   UPDATE_USER,
   UPDATE_TASK,
   TOGGLE_THEME,
-  MARK_TASK
+  ADD_CATEGORY,
+  REMOVE_CATEGORY,
+  ADD_TO_CATEGORY,
+  REMOVE_FROM_CATEGORY,
+  CHANGE_STATUS_FILTER,
+  CHANGE_PRIORITY_FILTER,
+  CHANGE_CATEGORY_FILTER
 }
 from "./actionTypes.js";
 
@@ -18,15 +24,6 @@ export const updateTask = (task) => {
   return {
     type: UPDATE_TASK,
     payload: task,
-  };
-}
-export const markTask = (task, status) => {
-  return {
-    type: MARK_TASK,
-    payload: {
-      task,
-      status
-    }
   };
 }
 export const removeTask = (task) => {
@@ -45,4 +42,52 @@ export const updateUser = (user) => {
     type: UPDATE_USER,
     payload: user,
   };
+}
+export const addCategory = (category) => {
+  return {
+    type: ADD_CATEGORY,
+    payload: category
+  };
+}
+export const removeCategory = (category) => {
+  return {
+    type: REMOVE_CATEGORY,
+    payload: category
+  };
+}
+export const addToCategory = (task, category) => {
+  return {
+    type: ADD_TO_CATEGORY,
+    payload: {
+      task,
+      category
+    }
+  };
+}
+export const removeFromCategory = (task, category) => {
+  return {
+    type: REMOVE_FROM_CATEGORY,
+    payload: {
+      task,
+      category
+    }
+  };
+}
+export const changeStatusFilter = (filter) => {
+  return {
+    type: CHANGE_STATUS_FILTER,
+    payload: filter
+  }
+}
+export const changePriorityFilter = (filter) => {
+  return {
+    type: CHANGE_PRIORITY_FILTER,
+    payload: filter
+  }
+}
+export const changeCategoryFilter = (filter) => {
+  return {
+    type: CHANGE_CATEGORY_FILTER,
+    payload: filter
+  }
 }

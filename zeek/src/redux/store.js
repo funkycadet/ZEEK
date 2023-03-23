@@ -4,11 +4,15 @@ import ThemeReducer from "./reducers/themeReducer";
 import TaskReducer from "./reducers/taskReducer";
 import thunk from "redux-thunk";
 import UserReducer from "./reducers/userReducer";
+import FilterReducer from "./reducers/filterReducer";
+import CategoryReducer from "./reducers/categoryReducer";
 
 const reducer = combineReducers ({
   tasks: TaskReducer,
+  categories: CategoryReducer,
   theme: ThemeReducer,
-  user: UserReducer
+  user: UserReducer,
+  filters: FilterReducer
 });
 
 const store = createStore(reducer, devToolsEnhancer());

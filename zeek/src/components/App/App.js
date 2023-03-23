@@ -1,14 +1,18 @@
-import {useSelector} from 'react-redux';
-import ThemeButton from '../ThemeButton'
+import Aside from "../Aside/Aside"
+import Footer from "../Footer/Footer";
+import Header from "../Header/Header"
+import Main from "../Main/Main"
 
 const App = () => {
-  const theme = useSelector(state => state.theme);
-
   return (
-    <div className={theme.isLightTheme ? 'light' : 'dark'}>
-      <p>Initial Setup</p>
-      <ThemeButton />
-    </div>
+    <>
+      <div className="container">
+        <Header />
+        <Main />
+        <Aside />
+      </div>
+      <Footer />
+    </>
   );
 }
 
