@@ -8,9 +8,12 @@ import {
   REMOVE_CATEGORY,
   ADD_TO_CATEGORY,
   REMOVE_FROM_CATEGORY,
-  CHANGE_STATUS_FILTER,
-  CHANGE_PRIORITY_FILTER,
-  CHANGE_CATEGORY_FILTER,
+  ADD_STATUS_FILTER,
+  REMOVE_STATUS_FILTER,
+  ADD_PRIORITY_FILTER,
+  REMOVE_PRIORITY_FILTER,
+  ADD_CATEGORY_FILTER,
+  REMOVE_CATEGORY_FILTER
   SET_VIEWPORT
 }
 from "./actionTypes.js";
@@ -74,21 +77,39 @@ export const removeFromCategory = (task, category) => {
     }
   };
 }
-export const changeStatusFilter = (filter) => {
+export const addStatusFilter = (filter) => {
   return {
-    type: CHANGE_STATUS_FILTER,
+    type: ADD_STATUS_FILTER,
     payload: filter
   }
 }
-export const changePriorityFilter = (filter) => {
+export const removeStatusFilter = (filter) => {
   return {
-    type: CHANGE_PRIORITY_FILTER,
+    type: REMOVE_STATUS_FILTER,
     payload: filter
   }
 }
-export const changeCategoryFilter = (filter) => {
+export const addPriorityFilter = (filter) => {
   return {
-    type: CHANGE_CATEGORY_FILTER,
+    type: ADD_PRIORITY_FILTER,
+    payload: filter
+  }
+}
+export const removePriorityFilter = (filter) => {
+  return {
+    type: REMOVE_PRIORITY_FILTER,
+    payload: filter
+  }
+}
+export const addCategoryFilter = (filter) => {
+  return {
+    type: ADD_CATEGORY_FILTER,
+    payload: filter
+  }
+}
+export const removeCategoryFilter = (filter) => {
+  return {
+    type: REMOVE_CATEGORY_FILTER,
     payload: filter
   }
 }
