@@ -1,7 +1,8 @@
 const TaskList = ({ category }) => {
   return (
-    <div>
-      {category.name}
+    <div className="task-list">
+      <h1>{category.name}</h1>
+
     </div>
   )
 }

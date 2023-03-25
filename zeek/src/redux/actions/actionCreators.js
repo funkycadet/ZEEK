@@ -10,7 +10,8 @@ import {
   REMOVE_FROM_CATEGORY,
   CHANGE_STATUS_FILTER,
   CHANGE_PRIORITY_FILTER,
-  CHANGE_CATEGORY_FILTER
+  CHANGE_CATEGORY_FILTER,
+  SET_VIEWPORT
 }
 from "./actionTypes.js";
 
@@ -89,5 +90,14 @@ export const changeCategoryFilter = (filter) => {
   return {
     type: CHANGE_CATEGORY_FILTER,
     payload: filter
+  }
+}
+export const setViewport = (current, target) => {
+  return {
+    type: SET_VIEWPORT,
+    payload: {
+      current,
+      target
+    }
   }
 }

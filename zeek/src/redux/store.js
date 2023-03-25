@@ -6,13 +6,15 @@ import thunk from "redux-thunk";
 import UserReducer from "./reducers/userReducer";
 import FilterReducer from "./reducers/filterReducer";
 import CategoryReducer from "./reducers/categoryReducer";
+import ViewportReducer from "./reducers/viewportReducer";
 
 const reducer = combineReducers ({
   tasks: TaskReducer,
   categories: CategoryReducer,
   theme: ThemeReducer,
   user: UserReducer,
-  filters: FilterReducer
+  filters: FilterReducer,
+  viewport: ViewportReducer
 });
 
 const store = createStore(reducer, devToolsEnhancer());
