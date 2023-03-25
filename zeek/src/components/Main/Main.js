@@ -5,9 +5,9 @@ const Main = () => {
   const filters = useSelector(state => state.filters);
   const categories = useSelector(state => state.categories); 
   const filteredCategories = categories.filter((category) => {
-    if (filters.category === "all") {
+    if (filters.category.length === 0) {
       return true;
-    } else if (filters.category === category.name) {
+    } else if (category.id in filters.category) {
       return true;
     } else {
       return false;
