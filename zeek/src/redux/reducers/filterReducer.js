@@ -17,7 +17,12 @@ const FilterReducer = (state = initialFilter, action) => {
   switch (action.type) {
     case ADD_STATUS_FILTER: {
       const filteredState = state.status.filter((s) =>  s !== action.payload);
-      return { ...state, status: [...filteredState, action.payload]};
+      if (action.payload === "Archived") {
+        return { ...state, status: [action.payload]};
+      } else {
+        const noArchived = state.status.filter((s) =>  s !== "Archived");
+        return { ...state, status: [...noArchived, action.payload]};
+      }
     }
 
     case REMOVE_STATUS_FILTER: {

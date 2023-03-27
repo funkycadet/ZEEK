@@ -16,28 +16,28 @@ const Popup = () => {
     case "add_task":
       return (
         <div className="popup-bg" onClick={removePopup}>
-          <TaskForm edit={false} target={{}} />
+          <TaskForm edit_mode={false} target={{}} />
         </div>
       )
 
     case "add_category":
       return (
         <div className="popup-bg" onClick={removePopup}>
-          <CategoryForm edit={false} target={{}} />
+          <CategoryForm edit_mode={false} target={{}} />
         </div>
       )
 
     case "edit_task":
       return (
         <div className="popup-bg" onClick={removePopup}>
-          <TaskForm edit={true} target={viewport.target} />
+          <TaskForm edit_mode={true} target={viewport.target} />
         </div>
       )
 
     case "edit_category":
       return (
         <div className="popup-bg" onClick={removePopup}>
-          <CategoryForm edit={true} target={viewport.target} />
+          <CategoryForm edit_mode={true} target={viewport.target} />
         </div>
       )
 

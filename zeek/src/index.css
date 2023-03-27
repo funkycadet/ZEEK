@@ -46,6 +46,7 @@ aside {
   grid-row: 1 / 4;
 }
 main {
+  min-height: 500px;
   grid-column: 3 / 13;
   padding: 2rem;
   border: 2px solid red;
@@ -71,6 +72,24 @@ footer {
 
 .popup {
   padding: 5rem;
-  background: red;
+  background: white;
+  border-radius: 5px;
+}
+
+input {
+  display: block;
+}
+
+select {
+  display: block;
+}
+
+input[type="checkbox"] {
+  display: inline;
+}
+
+.task-card {
+  background: #cccccc;
+  padding: 10px;
   border-radius: 5px;
 }

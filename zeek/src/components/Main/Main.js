@@ -7,7 +7,7 @@ const Main = () => {
   const filteredCategories = categories.filter((category) => {
     if (filters.category.length === 0) {
       return true;
-    } else if (category.id in filters.category) {
+    } else if (filters.category.includes(category.id)) {
       return true;
     } else {
       return false;
@@ -22,7 +22,7 @@ const Main = () => {
         <div className="view-as">
           <strong>View as</strong>
           <button type="button">Vertical</button>
-          <button>Horizonal</button>
+          <button>Horizontal</button>
         </div>
       </div>
       <div className="main-list">

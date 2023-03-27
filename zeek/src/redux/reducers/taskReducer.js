@@ -6,7 +6,7 @@ const initialTasks = [{
   title: "Task one",
   desc: "Details one",
   status: "Pending",
-  priority: "urgent",
+  priority: "Urgent",
   category: "Miscellanous"
 }];
 
@@ -21,7 +21,7 @@ const TaskReducer = (state = initialTasks, action) => {
             title: action.payload.title,
             desc: action.payload.desc,
             priority: action.payload.priority,
-            status: action.payload.status,
+            status: "Pending",
             category: action.payload.category
           }
         ]

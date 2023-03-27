@@ -12,7 +12,7 @@ const CategoryReducer = (state = initialCategories, action) => {
   switch (action.type) {
     case ADD_CATEGORY:
       return [
-        ...initialCategories, 
+        ...state,
         {
           id: uuid(),
           name: action.payload.name
@@ -20,7 +20,7 @@ const CategoryReducer = (state = initialCategories, action) => {
       ];
 
     case REMOVE_CATEGORY:
-      return initialCategories.filter((category) => category.id !== action.payload.id);
+      return state.filter((category) => category.id !== action.payload.id);
 
     default:
       return state;
