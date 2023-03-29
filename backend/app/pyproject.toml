@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "app"
+version = "0.1.0"
+description = ""
+authors = ["Admin <admin@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+uvicorn = "^0.11.3"
+fastapi = "^0.54.1"
+tenacity = "^6.1.0"
+pydantic = "^1.4"
+gunicorn = "^20.0.4"
+psycopg2-binary = "^2.8.5"
+alembic = "^1.4.2"
+sqlalchemy = "^1.3.16"
+httpcore = "<=0.15"
+PyJWT = "^2.6.0"
+bcrypt = "^4.0.1"
+python-jose = {extras = ["cryptography"], version = "^3.3.0"}
+passlib = {extras = ["bcrypt"], version = "^1.7.4"}
+python-multipart = "^0.0.5"
+
+[tool.isort]
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+line_length = 88
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
+
