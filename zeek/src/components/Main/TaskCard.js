@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { removeTask, updateTask } from "../../redux/actions/actionCreators";
+import { removeTask, setViewport, updateTask } from "../../redux/actions/actionCreators";
 
 const TaskCard = ({ id, title, desc, priority, status, category })=> {
   const dispatch = useDispatch();
@@ -32,6 +32,11 @@ const TaskCard = ({ id, title, desc, priority, status, category })=> {
     }
     dispatch(updateTask(updatedTask));
   }
+  const editTask = () => {
+    dispatch(setViewport("edit_task", {
+      id, title, desc, priority, status, category
+    }))
+  }
   return (
     <div className="task-card">
       <div>
@@ -48,6 +53,7 @@ const TaskCard = ({ id, title, desc, priority, status, category })=> {
             <button type="button" onClick={() => setDeleting(true)}>Delete</button>
           )
         }
+        <button type="button" onClick={editTask}>Edit</button>
       </div>
       <button type="button" onClick={changeStatus}>{status}</button>
       <p>{desc}</p>

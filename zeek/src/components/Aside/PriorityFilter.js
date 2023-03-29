@@ -17,7 +17,7 @@ const PriorityFilter = () => {
         <input type="checkbox" value="Low" id="low" onChange={changeFilter}/>
         <label for="low">Low</label>
               <br/>
-        <input type="checkbox" value="Normal " id="normal" onChange={changeFilter}/>
+        <input type="checkbox" value="Normal" id="normal" onChange={changeFilter}/>
         <label for="normal">Normal</label>
               <br/>
         <input type="checkbox" value="Urgent" id="urgent" onChange={changeFilter}/>

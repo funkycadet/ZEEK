@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import { addTask } from "../../redux/actions/actionCreators";
+import { addTask, setViewport, updateTask } from "../../redux/actions/actionCreators";
 
 const TaskForm = ({ target, edit_mode }) => {
   const dispatch = useDispatch();
@@ -24,12 +24,24 @@ const TaskForm = ({ target, edit_mode }) => {
   }
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addTask({
-      title,
-      desc,
-      priority,
-      category
-    }))
+    if (edit_mode) {
+      dispatch(updateTask({
+        id: target.id,
+        title,
+        desc,
+        priority,
+        status: target.status,
+        category
+      }));
+      dispatch(setViewport("main"))
+    } else {
+      dispatch(addTask({
+        title,
+        desc,
+        priority,
+        category
+      }))
+    }
     setTitle("");
     setDesc("");
     setCategory("1");
