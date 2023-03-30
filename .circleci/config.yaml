@@ -1,0 +1,71 @@
+version: 2.1
+orbs:
+  python: circleci/python@2.0.3
+  heroku: circleci/heroku@1.2.6
+
+# environment:
+#   HEROKU_API_KEY:
+  # HEROKU_APP_NAME: zeek
+
+jobs:
+  # build_image:
+  #   docker:
+  #   - image: cimg/base:2022.08
+  #   environment:
+  #     DOCKER_COMPOSE_FILE: docker-compose.yaml
+  #     $IMAGE_NAME: zeek_backend
+
+  # # test_image:
+  # #   executor: python/default
+  # #   steps:
+  # #     - checkout
+  # #     - python/install-packages:
+  # #         pkg-manager: poetry
+  # #     - run:
+  # #         name: Run tests on built image
+  # #         command: python -m pytest
+
+  deploy:
+    machine: true
+    # executor: heroku/default
+    steps:
+      - checkout
+      - run:
+          name: Build and push Docker image to Heroku
+          command: |
+            sudo curl https://cli-assets.heroku.com/install.sh | sh
+            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:login
+            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:push -a smith2eric-zeek server
+            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:release -a smith2eric-zeek server
+      # - attach_workspace:
+      #     at: ~/backend
+      # - heroku/deploy-via-git:
+      #     force: true
+
+  # push_to_docker:
+  #   steps:
+  #     - checkout
+  #     - run:
+  #         name: Push docker image to DockerHub
+  #         command: |
+  #           docker login --username funkycadet --password-stdin "$PASSWORD"
+  #           docker build -t $IMAGE_NAME:latest -t $IMAGE_NAME:0.1.0
+
+
+
+workflows:
+  heroku_deploy:
+    jobs:
+      # - build_image:
+      # - test_image:
+      #     requires:
+      #       - build_image
+      # - push_to_docker:
+      #     requires:
+      #       - build_image
+      - deploy:
+          # requires:
+          #   - push_to_docker
+          filters:
+            branches:
+              only: main
