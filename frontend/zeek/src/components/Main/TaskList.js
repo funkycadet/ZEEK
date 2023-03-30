@@ -28,7 +28,7 @@ const TaskList = ({ category }) => {
         ) :
         filteredTasks.map((task) => {
           return (
-            <TaskCard {...task} key={task.id} />
+            <TaskCard key={task.id} {...task}  />
           )
         })
       }

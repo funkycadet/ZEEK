@@ -19,7 +19,7 @@ const CategoryFilter = () => {
           return (
             <>
               <input type="checkbox" id={category.id} value={category.id} onChange={changeFilter}/>
-              <label for={category.id}>{category.name}</label>
+              <label htmlFor={category.id}>{category.name}</label>
               <br/>
             </>
           )

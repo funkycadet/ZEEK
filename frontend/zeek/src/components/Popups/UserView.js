@@ -1,17 +1,11 @@
-import { useSelector, useDispatch } from "react-redux";
-import { setViewport } from "../../redux/actions/actionCreators";
+import { useSelector } from "react-redux";
 
 const UserView = () => {
-  const dispatch = useDispatch();
   const user = useSelector(state => state.user);
-  const editUser = () => {
-    dispatch(setViewport("edit_user"));
-  }
   return (
     <div className="popup">
       <h2>Your Account</h2>
-      <img src={require('../../assets/MarcusAurellius.png')} alt="Profile Picture" />
-      <button type="button" onClick={editUser}>Edit</button>
+      <img src={require('../../assets/MarcusAurellius.png')} alt="User Profile" />
       <ul>
         <li>
           <h4>Username</h4>

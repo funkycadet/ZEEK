@@ -18,22 +18,22 @@ const StatusFilter = () => {
         <input type="checkbox" value="Pending" id="pending" onChange={changeFilter}
           checked={filters.status.includes("Pending") ? true : false}
         />
-        <label for="pending">Pending</label>
+        <label htmlFor="pending">Pending</label>
               <br/>
         <input type="checkbox" value="In Progress" id="in-progress" onChange={changeFilter}
           checked={filters.status.includes("In Progress") ? true : false}
         />
-        <label for="in-progress">In Progress</label>
+        <label htmlFor="in-progress">In Progress</label>
               <br/>
         <input type="checkbox" value="Complete" id="complete" onChange={changeFilter}
           checked={filters.status.includes("Complete") ? true : false}
         />
-        <label for="complete">Complete</label>
+        <label htmlFor="complete">Complete</label>
               <br/>
         <input type="checkbox" value="Archived" id="archived" onChange={changeFilter}
           checked={filters.status.includes("Archived") ? true : false}
         />
-        <label for="archived">Archived</label>
+        <label htmlFor="archived">Archived</label>
               <br/>
       </form>
     </div>

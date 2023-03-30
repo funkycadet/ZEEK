@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <footer>
-      Footer          
+      <div> ALX Specialization Portfolio Project - ZEEK Task Manager</div>         
     </footer>
   )
 }

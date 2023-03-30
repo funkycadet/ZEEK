@@ -1,14 +1,7 @@
-import { ADD_TASK, REMOVE_TASK, UPDATE_TASK, MARK_TASK } from "../actions/actionTypes";
+import { ADD_TASK, REMOVE_TASK, UPDATE_TASK } from "../actions/actionTypes";
 import { v4 as uuid } from 'uuid';
 
-const initialTasks = [{
-  id: "25aeaf32-3ef6-4009-869d-b784f1f072cd",
-  title: "Task one",
-  desc: "Details one",
-  status: "Pending",
-  priority: "Urgent",
-  category: "Miscellanous"
-}];
+const initialTasks = [];
 
 const TaskReducer = (state = initialTasks, action) => {
   switch (action.type) {

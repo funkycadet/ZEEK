@@ -50,12 +50,12 @@ const TaskForm = ({ target, edit_mode }) => {
     <div className="popup">
       <h1>{ edit_mode ? "Edit" : "Add" } task</h1>
       <form onSubmit={handleSubmit}>
-        <label for="task_title">Title</label>
+        <label htmlFor="task_title">Title</label>
         <input type="text" name="task_title" id="task_title" value={title} onChange={handleTitle} required/>
-        <label for="task_id">Description</label>
+        <label htmlFor="task_id">Description</label>
         <input type="text" name="task_desc" id="task_desc" value={desc} onChange={handleDesc} />
         
-        <label for="category">Category</label>
+        <label htmlFor="category">Category</label>
         <select id="category" onChange={handleCategory}>
           <option value={category}>{categories.find((cat) => cat.id === category).name}</option>
           {
@@ -68,7 +68,7 @@ const TaskForm = ({ target, edit_mode }) => {
             })
           } 
         </select>
-        <label for="category">Priority</label>
+        <label htmlFor="category">Priority</label>
         <select id="category" onChange={handlePriority}>
           <option value="Low">Low</option>
           <option value="Normal">Normal</option>

@@ -15,13 +15,13 @@ const PriorityFilter = () => {
       <h2>Priority</h2>
       <form className="filter">
         <input type="checkbox" value="Low" id="low" onChange={changeFilter}/>
-        <label for="low">Low</label>
+        <label htmlFor="low">Low</label>
               <br/>
         <input type="checkbox" value="Normal" id="normal" onChange={changeFilter}/>
-        <label for="normal">Normal</label>
+        <label htmlFor="normal">Normal</label>
               <br/>
         <input type="checkbox" value="Urgent" id="urgent" onChange={changeFilter}/>
-        <label for="urgent">Urgent</label>
+        <label htmlFor="urgent">Urgent</label>
               <br/>
       </form>
     </div>

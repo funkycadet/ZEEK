@@ -5,8 +5,8 @@ const initialUser = {
   username: "abebe",
   name: "Abebe",
   password: "abebe",
-  creation_time: Date.now(),
-  login_time: Date.now()
+  creation_time: new Date().toLocaleString(),
+  login_time: new Date().toString()
 }
 
 const UserReducer = (state = initialUser, action) => {
