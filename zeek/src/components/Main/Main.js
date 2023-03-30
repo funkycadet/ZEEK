@@ -20,7 +20,7 @@ const Main = () => {
           <input type="text" name="search" />
         </form>
         <div className="view-as">
-          <strong>View as</strong>
+          <strong>View as: </strong>
           <button type="button">Vertical</button>
           <button>Horizontal</button>
         </div>

@@ -35,7 +35,7 @@ const TaskCard = ({ id, title, desc, priority, status, category })=> {
   return (
     <div className="task-card">
       <div>
-        <h3>{title}</h3> 
+        <h3 className="task-title">{title}</h3> 
         {
           deleting ?
           (
@@ -49,9 +49,9 @@ const TaskCard = ({ id, title, desc, priority, status, category })=> {
           )
         }
       </div>
-      <button type="button" onClick={changeStatus}>{status}</button>
-      <p>{desc}</p>
-      <span>Priority: {priority}</span>
+      <button className="status" type="button" onClick={changeStatus}>{status}</button>
+      <p className="desc"><strong>Description:</strong> {desc}</p>
+      <span className="priority"><strong>Priority: </strong> {priority}</span>
       {
         (status === "Complete") &&
         (

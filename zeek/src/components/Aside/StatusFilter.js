@@ -12,7 +12,7 @@ const StatusFilter = () => {
     }
   };
   return (
-    <div>
+    <div className="dropdown">
       <h2>Status</h2>
       <form className="filter">
         <input type="checkbox" value="Pending" id="pending" onChange={changeFilter}
