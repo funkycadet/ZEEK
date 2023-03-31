@@ -2,6 +2,7 @@ version: 2.1
 orbs:
   python: circleci/python@2.0.3
   heroku: circleci/heroku@1.2.6
+  docker: circleci/docker@2.0.1
 
 # environment:
 #   HEROKU_API_KEY:
@@ -63,8 +64,12 @@ workflows:
       # - push_to_docker:
       #     requires:
       #       - build_image
+      - docker/publish:
+          deploy: false
+          image: $CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME
       - deploy:
-          # requires:
+          requires:
+            - docker/publish
           #   - push_to_docker
           filters:
             branches:
