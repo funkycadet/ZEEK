@@ -35,8 +35,8 @@ jobs:
           command: |
             sudo curl https://cli-assets.heroku.com/install.sh | sh
             HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:login
-            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:push -a zeek server
-            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:release -a zeek server
+            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:push -a smith2eric-zeek server
+            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:release -a smith2eric-zeek server
       # - attach_workspace:
       #     at: ~/backend
       # - heroku/deploy-via-git:
